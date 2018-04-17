@@ -25,4 +25,4 @@
      }
    ```
 
-   解决问题。
+   或者找到``config\index.js``，将``useEslint:true``改为``false``，问题解决。
