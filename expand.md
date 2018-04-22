@@ -74,4 +74,50 @@
 
 4. [nodejs](http://nodejs.cn/)
 
+5. 图片加载优化
+
+   1⃣ img属性lowsrc，指向一个低画质图片的地址。
+
+   2⃣ 预加载。
+
+   ​	*css预加载*：利用css的background属性可以预先加载图片，但不显示在屏幕位置内，使用这些图片时路径一致的话，浏览器会优先加载缓存内的图片进行显示，这样就达到了预加载的目的。
+
+   ```css
+   #preload-img{
+       background: url(http://example.com/image.png) no-repeat -9999px -9999px;
+   }
+   ```
+
+   ​	但是这种方式会在刚开始页面加载时影响其他内容显示，可以添加一些js。
+
+   ```javascript
+   window.onload = function () {
+       let preload = document.createElement('div');
+       preload.id = 'preload';
+       document.body.appendChild(preload);
+   }
+   ```
+
+   ​	*纯js预加载*：利用js实例化图片对象，再赋值应用地址，这样可以实现批量图片预加载。
+
+   ```Javascript
+   window.onload = function () {
+       let images = [
+           'http://example.com/image1.png',
+           'http://example.com/image2.png',
+           'http://example.com/image3.png',
+       ];
+
+       images.forEach((src) => {
+           preload(src);
+       })
+   }
+
+   let preload = src => {
+       let img = new Image();
+       img.src = src;
+   }
+   ```
+
+   3⃣ 懒加载(`lazy load.js`)。
 
