@@ -119,5 +119,5 @@
    }
    ```
 
-   3⃣ 懒加载(`lazy load.js`)。
+   3⃣ 懒加载(`lazy load.js`)，[imagesloaded](https://imagesloaded.desandro.com/)(图片加载)。
 
