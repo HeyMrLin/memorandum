@@ -121,3 +121,18 @@
 
    3⃣ 懒加载(`lazy load.js`)，[imagesloaded](https://imagesloaded.desandro.com/)(图片加载)。
 
+6. 获取动态变量
+
+   使用场景：当需要获取多个变量的值，而变量是有规律的，可以通过循环来获取。
+
+   ```javascript
+   var obj1=1;
+   var obj2=2;
+   var obj3=3;
+   for (let i=1;i<=3;i++){
+   	console.log(eval("obj"+i));
+   }
+   ```
+
+   ​
+
